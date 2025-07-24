@@ -11,10 +11,14 @@ const smtp = nodemailer.createTransport({
     pass: process.env.EMAIL_APP_PASSWORD,
   },
 });
+const receiverEmails = process.env.RECEIVER_EMAIL
+  ? process.env.RECEIVER_EMAIL.split(",").map(e => e.trim()).filter(Boolean)
+  : [];
+
 async function sendMail(ticker) {
   await smtp.sendMail({
     from: process.env.SENDER_EMAIL,
-    to: process.env.RECEIVER_EMAIL,
+    to: receiverEmails,
     subject: `🔥 New WSB trending ticker: ${ticker}`,
     text: `${ticker} just appeared in WSBApp's daily trending list.`,
   });
