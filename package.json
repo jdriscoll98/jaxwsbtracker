@@ -1,0 +1,20 @@
+{
+  "name": "wsbbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "graphql-ws": "^6.0.6",
+    "node-fetch": "^3.3.2",
+    "nodemailer": "^7.0.5",
+    "ws": "^8.18.3"
+  }
+}

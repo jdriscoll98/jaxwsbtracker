@@ -1,0 +1,13 @@
+{
+    "operationName": "SubscribeSubscription",
+    "query": "\n        subscription SubscribeSubscription($input: SubscribeInput!) {\n          subscribe(input: $input) {\n            id\n            ... on BasicMessage {\n              data {\n                ... on DevPlatformAppMessageData {\n                  payload\n                }\n              }\n            }\n          }\n        }\n      ",
+    "variables": {
+      "input": {
+        "channel": {
+          "teamOwner": "DEV_PLATFORM",
+          "category": "DEV_PLATFORM_APP_EVENTS",
+          "tag": "wsbapp:771348a3-fe17-45f7-9e5d-4741f9b38b5b:LIVE_FEED"
+        }
+      }
+    }
+  }
